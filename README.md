@@ -61,3 +61,5 @@ Si `git push` est refusé, c'est que l'autre a envoyé quelque chose entre-temps
 
 - `textures-source/` : les fichiers d'origine des textures et des planches de pictos (trop lourds).
 - Les clés et outils de génération d'images (muapi) restent sur le PC de Nathan.
+
+Dépôt : https://github.com/MaBatis-Git/mabatis
