@@ -136,7 +136,7 @@ em.b{font-style:italic;font-weight:700}                 /* l'italique gras de «
   transform:perspective(1200px) translate3d(0,calc(var(--py,0)*1px),0) rotateX(calc(var(--rx,0)*1deg)) scale(1.06);will-change:transform}
 .matiere::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,22,15,.30),rgba(10,22,15,.52))}
 /* herbe : vidéo en boucle */
-.matiere .fond video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.matiere .fond video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s linear}
 /* pierre et bois : la caméra glisse de gauche à droite sans fin (bande d'image doublée en miroir, donc sans raccord) */
 .matiere .bande{position:absolute;top:0;left:0;height:100%;aspect-ratio:64/9;min-width:200vw;background:var(--img) 0 0/50% 100% repeat-x;animation:travelling var(--duree,90s) linear infinite;will-change:transform}
 .matiere.pierre{--img:url("../img/pierre-boucle.jpg")}

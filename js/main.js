@@ -75,5 +75,24 @@
     parallaxe();
   }
 
+  // vidéos en boucle sans à-coup : deux lecteurs se relaient avec un fondu d'une seconde.
+  // Le lecteur du dessous reste toujours plein ; seul celui du dessus apparaît et disparaît.
+  document.querySelectorAll(".fond").forEach(function(fond){
+    var v = fond.querySelectorAll("video.boucle"); if(v.length < 2) return;
+    var FONDU = 1;
+    v[0].loop = false;
+    function relais(i){
+      return function(){
+        var a = v[i], b = v[1-i];
+        if(!a.duration || a.currentTime < a.duration - FONDU || !b.paused) return;
+        b.currentTime = 0;
+        var p = b.play(); if(p && p.catch) p.catch(function(){});
+        v[1].style.opacity = (1-i);
+      };
+    }
+    v[0].addEventListener("timeupdate", relais(0));
+    v[1].addEventListener("timeupdate", relais(1));
+  });
+
   var an = document.getElementById("annee"); if(an) an.textContent = new Date().getFullYear();
 })();

@@ -11,7 +11,7 @@ const fl=`<span class="fl" aria-hidden="true">→</span>`;
 
 // ---------- gabarit ----------
 // couche de fond des sections de matière : vidéo pour l'herbe, bande qui défile pour la pierre et le bois
-const FOND={herbe:'<div class="fond" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/herbe.jpg"><source src="img/herbe.mp4" type="video/mp4"></video></div>',
+const FOND={herbe:'<div class="fond" aria-hidden="true"><video class="boucle" autoplay muted loop playsinline preload="auto" poster="img/herbe.jpg" src="img/herbe.mp4"></video><video class="boucle" muted playsinline preload="auto" src="img/herbe.mp4" style="opacity:0"></video></div>',
   pierre:'<div class="fond" aria-hidden="true"><div class="bande"></div></div>',bois:'<div class="fond" aria-hidden="true"><div class="bande"></div></div>'};
 const avecFonds=html=>html.replace(/<section class="matiere (herbe|pierre|bois)([^"]*)">/g,(m,n)=>m+"\n  "+FOND[n]);
 
