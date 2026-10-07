@@ -5,3 +5,13 @@ textures-source/
 .netlify/
 node_modules/
 .env
+
+# ne jamais envoyer de clés, mots de passe ou données de clients
+.env*
+*.key
+*.pem
+*secret*
+*credentials*
+donnees-clients/
+*.csv
+*.xlsx
