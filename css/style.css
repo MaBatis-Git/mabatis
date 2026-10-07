@@ -1,0 +1,200 @@
+/* MaBâtis — feuille de style commune aux 4 pages
+   Idée : beaucoup de blanc et une typo dense (Montserrat), réveillés par des touches « croquis » vertes
+   et par des bandes de matière (herbe, pierre, bois). */
+:root{
+  --vert:#1FBE1F;        /* vert du logo */
+  --vert-texte:#0F8A17;  /* même teinte, assez foncée pour du texte sur blanc */
+  --encre:#111312;
+  --gris:#5C6660;
+  --trait:#E5E8E3;
+  --papier:#F6F4EE;
+  --nuit:#0A160F;
+  --blanc:#FFFFFF;
+  --titre:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --rayon:28px;
+  --large:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--blanc);color:var(--encre);font-family:var(--titre);font-size:16.5px;letter-spacing:-.015em;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--large);margin:0 auto;padding-inline:24px}
+section{padding-block:clamp(64px,10vw,128px)}
+/* fond papier : un grain très léger, pour que les croquis aient l'air posés sur une feuille */
+.papier,.porte:not(.noire),.bien .vue{background-color:var(--papier);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .33 0 0 0 0 .31 0 0 0 0 .26 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E")}
+
+/* ---------- typo ---------- */
+h1,h2,h3{font-weight:700;letter-spacing:-.05em;line-height:1.06;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,5.4vw,66px)}
+h2{font-size:clamp(26px,3.5vw,44px)}
+h3{font-size:clamp(18px,1.9vw,22px);letter-spacing:-.035em;line-height:1.22}
+p{margin:0}
+.chapo{font-size:clamp(17px,1.7vw,20px);color:var(--gris);max-width:58ch;line-height:1.5;letter-spacing:-.02em}
+em.b{font-style:italic;font-weight:700}                 /* l'italique gras de « Bâtis » */
+/* petit libellé au-dessus des titres, précédé du carré crayonné du logo */
+.sur{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;letter-spacing:-.01em;color:var(--vert-texte);line-height:1.2}
+.sur::before{content:"";width:13px;height:11px;flex:none;background:url("../img/croquis/carre.png") center/contain no-repeat}
+.matiere .sur,.sombre .sur,footer .sur{color:#8FE08F}
+
+/* soulignement : un vrai trait de crayon, découpé dans une planche dessinée */
+.trait{position:relative;white-space:nowrap}
+.trait::after{content:"";position:absolute;left:-1%;right:-1%;bottom:-.2em;height:.2em;background:url("../img/croquis/trait-fin.png") center/100% 100% no-repeat;z-index:-1}
+/* le petit carré hachuré du logo, tel quel */
+.carre{display:inline-block;width:.34em;height:.3em;margin-left:.07em;background:url("../img/croquis/carre.png") center/contain no-repeat}
+
+/* ---------- boutons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:600;font-size:15.5px;letter-spacing:-.02em;text-decoration:none;border:0;cursor:pointer;
+  padding:14px 24px;border-radius:999px;color:var(--blanc);
+  background:linear-gradient(135deg,#27B52B 0%,#149A1C 48%,#0B6F15 100%);background-size:160% 160%;background-position:0% 50%;
+  box-shadow:0 10px 24px -14px rgba(11,111,21,.75),inset 0 1px 0 rgba(255,255,255,.22);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),background-position .5s,box-shadow .25s,background-color .25s,color .25s}
+.btn:hover{transform:translateY(-2px);background-position:100% 50%;box-shadow:0 16px 30px -14px rgba(11,111,21,.8),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn.noir{background:var(--encre);box-shadow:none}
+.btn.noir:hover{background:#2A2F2C}
+.btn.blanc{background:var(--blanc);color:var(--encre);box-shadow:none}
+.btn.blanc:hover{background:#EEF3EE}
+.btn.contour{background:transparent;color:var(--encre);box-shadow:inset 0 0 0 1.5px var(--encre)}
+.btn.contour:hover{background:var(--encre);color:var(--blanc)}
+.btn .fl{transition:transform .25s}
+.btn:hover .fl{transform:translateX(4px)}
+.boutons{display:flex;flex-wrap:wrap;gap:12px}
+:focus-visible{outline:3px solid var(--vert);outline-offset:3px;border-radius:6px}
+
+/* ---------- barre du haut ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.colle{border-bottom-color:var(--trait)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:72px}
+.nav .logo img{height:50px;width:auto}
+.nav nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav nav a{font-weight:600;font-size:15px;text-decoration:none;padding:10px 14px;border-radius:999px;transition:background .2s}
+.nav nav a:hover,.nav nav a[aria-current="page"]{background:var(--papier)}
+.nav nav a.btn{padding:11px 20px;color:var(--blanc);margin-left:8px}
+.burger{display:none;margin-left:auto;background:none;border:0;padding:10px;cursor:pointer}
+.burger span{display:block;width:24px;height:2.5px;background:var(--encre);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+@media (max-width:820px){
+  .burger{display:block}
+  .nav nav{position:absolute;top:72px;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:4px;padding:12px 24px 24px;background:var(--blanc);border-bottom:1px solid var(--trait);display:none}
+  .nav.ouvert nav{display:flex}
+  .nav nav a{padding:14px 16px;font-size:17px}
+  .nav nav a.btn{margin:8px 0 0;justify-content:center}
+  .nav.ouvert .burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav.ouvert .burger span:nth-child(2){opacity:0}
+  .nav.ouvert .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+}
+
+/* ---------- héros ---------- */
+.heros{padding-block:clamp(56px,9vw,120px) clamp(48px,7vw,96px)}
+.heros .wrap{display:flex;flex-direction:column;gap:28px}
+.heros h1{max-width:15ch}
+.heros.large h1{max-width:18ch}
+
+/* ---------- les 3 entrées ---------- */
+.portes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.porte{position:relative;display:flex;flex-direction:column;gap:14px;min-height:320px;padding:30px;border-radius:var(--rayon);background:var(--papier);text-decoration:none;overflow:hidden;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.porte:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(10,22,15,.35)}
+.porte .ico{width:92px;height:92px;object-fit:contain;object-position:left center;margin-bottom:auto}
+.porte h3{font-size:clamp(22px,2.4vw,30px)}
+.porte p{color:var(--gris);font-size:16px}
+.porte .va{font-weight:700;display:inline-flex;gap:8px;align-items:center;margin-top:6px}
+.porte .va .fl{transition:transform .3s}
+.porte:hover .va .fl{transform:translateX(6px)}
+.porte.noire{background:var(--nuit);color:var(--blanc)}
+.porte.noire p{color:#B9C4BD}
+@media (max-width:900px){.portes{grid-template-columns:1fr}.porte{min-height:0}.porte .ico{margin-bottom:8px}}
+
+
+/* ---------- grilles de contenu ---------- */
+.entete{display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(36px,5vw,64px)}
+.grille{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:680px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.carte{padding:28px;border-radius:var(--rayon);background:var(--blanc);border:1px solid var(--trait);display:flex;flex-direction:column;gap:10px}
+.papier .carte{border-color:transparent}
+.carte p{color:var(--gris);font-size:16px}
+.carte .ico{width:68px;height:68px;object-fit:contain;object-position:left center;margin-bottom:10px}
+
+/* étapes : un vrai ordre, donc de vrais numéros */
+.etapes{counter-reset:e;display:grid;gap:0}
+.etape{counter-increment:e;display:grid;grid-template-columns:auto 1fr;gap:8px 28px;padding:28px 0;border-top:1px solid var(--trait)}
+.etape:last-child{border-bottom:1px solid var(--trait)}
+.etape::before{content:counter(e);font-style:italic;font-weight:700;font-size:30px;letter-spacing:-.05em;line-height:1;color:var(--vert-texte);grid-row:span 2;min-width:1.2ch;padding-top:1px}
+.etape p{color:var(--gris);max-width:62ch}
+.deux{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(32px,6vw,96px);align-items:start}
+@media (max-width:900px){.deux{grid-template-columns:1fr}}
+.colle-haut{position:sticky;top:110px;display:flex;flex-direction:column;gap:18px}
+@media (max-width:900px){.colle-haut{position:static}}
+
+/* ---------- bandes de matière ---------- */
+.matiere{position:relative;color:var(--blanc);overflow:hidden;isolation:isolate;background:var(--nuit)}
+/* fond de matière : une couche plus haute que la section, que le script fait glisser au défilement (parallaxe) */
+.matiere .fond{position:absolute;left:0;right:0;top:-22%;bottom:-22%;z-index:-2;overflow:hidden;
+  transform:perspective(1200px) translate3d(0,calc(var(--py,0)*1px),0) rotateX(calc(var(--rx,0)*1deg)) scale(1.06);will-change:transform}
+.matiere::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,22,15,.30),rgba(10,22,15,.52))}
+/* herbe : vidéo en boucle */
+.matiere .fond video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* pierre et bois : la caméra glisse de gauche à droite sans fin (bande d'image doublée en miroir, donc sans raccord) */
+.matiere .bande{position:absolute;top:0;left:0;height:100%;aspect-ratio:64/9;min-width:200vw;background:var(--img) 0 0/50% 100% repeat-x;animation:travelling var(--duree,90s) linear infinite;will-change:transform}
+.matiere.pierre{--img:url("../img/pierre-boucle.jpg")}
+.matiere.bois{--img:url("../img/bois-boucle.jpg");--duree:110s}
+@keyframes travelling{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.matiere .wrap{transform:translate3d(0,calc(var(--ty,0)*1px),0);will-change:transform}
+.matiere .wrap{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+.matiere h2{font-size:clamp(28px,4.3vw,54px);max-width:18ch;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.matiere p{color:#F0F4F1;max-width:54ch;font-size:clamp(16px,1.6vw,19px);text-shadow:0 1px 16px rgba(0,0,0,.55)}
+.matiere.centre .wrap{align-items:center;text-align:center}
+.sombre{background:var(--nuit);color:var(--blanc)}
+.sombre .chapo{color:#B9C4BD}
+
+/* ---------- biens ---------- */
+.filtres{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filtres button{font:inherit;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px;border:1px solid var(--trait);background:var(--blanc);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.filtres button[aria-pressed="true"]{background:var(--encre);color:var(--blanc);border-color:var(--encre)}
+.bien{border-radius:var(--rayon);overflow:hidden;background:var(--blanc);border:1px solid var(--trait);display:flex;flex-direction:column}
+.bien .vue{aspect-ratio:4/3;display:grid;place-items:center}
+.bien .vue .ico{width:132px;height:132px;object-fit:contain}
+.bien .txt{padding:22px 24px 26px;display:flex;flex-direction:column;gap:6px}
+.bien .txt p{color:var(--gris);font-size:15px}
+.etiquette{align-self:flex-start;font-weight:600;font-size:12.5px;letter-spacing:-.01em;line-height:1;color:var(--vert-texte);background:rgba(31,190,31,.12);padding:6px 11px;border-radius:999px;margin-bottom:4px}
+
+/* ---------- formulaire ---------- */
+form.contact{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:clamp(22px,3vw,36px);border-radius:var(--rayon);background:var(--blanc);border:1px solid var(--trait)}
+form.contact label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+form.contact .tout{grid-column:1 / -1}
+form.contact input,form.contact select,form.contact textarea{font:inherit;font-weight:400;font-size:16px;padding:14px 16px;border-radius:14px;border:1px solid var(--trait);background:var(--papier);color:var(--encre);min-width:0;width:100%}
+form.contact textarea{min-height:120px;resize:vertical}
+form.contact input:focus,form.contact select:focus,form.contact textarea:focus{outline:2px solid var(--vert);outline-offset:1px;background:var(--blanc)}
+form.contact .retour{grid-column:1 / -1;font-weight:600;padding:14px 16px;border-radius:14px;background:var(--papier)}
+form.contact small{grid-column:1 / -1;color:var(--gris);font-size:13px;font-weight:400}
+@media (max-width:620px){form.contact{grid-template-columns:1fr}}
+
+/* ---------- pied de page ---------- */
+footer{background:var(--nuit);color:#B9C4BD;padding-block:64px 40px;font-size:15px}
+footer .haut{display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;align-items:flex-start;margin-bottom:40px}
+footer img{height:64px;width:auto}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+footer a{text-decoration:none;color:var(--blanc);font-weight:600}
+footer a:hover{color:var(--vert)}
+footer .legal{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;max-width:80ch;font-size:13.5px;line-height:1.55}
+
+/* ---------- apparitions au défilement (seulement si le script tourne) ---------- */
+.js [data-vu]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js [data-vu].vu{opacity:1;transform:none}
+.js .trait::after{opacity:0;transition:opacity .8s ease .45s}
+.js .vu .trait::after,.js .trait.vu::after{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-vu]{opacity:1;transform:none;transition:none}
+  .js .trait::after{opacity:1;transition:none}
+  .matiere .bande{animation:none!important}
+  .matiere .fond,.matiere .wrap{transform:none!important}
+  .btn,.porte{transition:none}
+}
+
+/* les ancres ne passent pas sous la barre du haut */
+[id]{scroll-margin-top:96px}
+[hidden]{display:none!important}

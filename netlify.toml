@@ -1,0 +1,4 @@
+# Netlify reconstruit et publie le site à chaque envoi sur GitHub
+[build]
+  command = "node outils/construire.js && node outils/publier.js"
+  publish = "_en-ligne"

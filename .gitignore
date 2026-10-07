@@ -1,0 +1,7 @@
+# dossier fabriqué automatiquement
+_en-ligne/
+# fichiers sources lourds des textures (gardés seulement sur le PC)
+textures-source/
+.netlify/
+node_modules/
+.env

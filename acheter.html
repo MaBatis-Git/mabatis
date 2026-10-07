@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trouver un bien · MaBâtis</title>
+<meta name="description" content="Terrains, granges et maisons en Ariège, à découvrir en images avant de vous déplacer.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="MaBâtis, accueil"><img src="img/logo.png" alt="MaBâtis" width="1080" height="520"></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav aria-label="Navigation principale">
+      <a href="vendre.html">Vendre</a>
+      <a href="acheter.html" aria-current="page">Acheter</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a class="btn noir" href="#contact">Nous écrire</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="heros large">
+  <div class="wrap">
+    <p class="sur" data-vu>Vous cherchez</p>
+    <h1 data-vu style="--d:.05s">Visitez <em class="b"><span class="trait">avant</span></em> de vous déplacer<span class="carre"></span></h1>
+    <p class="chapo" data-vu style="--d:.12s">Terrains, granges, maisons à rénover en Ariège. Pour chaque bien : des photos, une vidéo et les dimensions, pour savoir si ça vaut la route.</p>
+    <div class="boutons" data-vu style="--d:.18s"><a class="btn" href="#biens">Voir les biens <span class="fl" aria-hidden="true">→</span></a><a class="btn contour" href="#contact">Être prévenu des nouveautés</a></div>
+  </div>
+</section>
+
+<section class="papier">
+  <div class="wrap">
+    <div class="entete" data-vu><p class="sur">Ce que vous y gagnez</p><h2>Une vue d'ensemble, <em class="b">tout de suite</em>.</h2></div>
+    <div class="grille g3">
+      <div class="carte" data-vu><img class="ico" src="img/croquis/oeil.png" alt="" loading="lazy"><h3>Vous voyez tout</h3><p>L'intérieur, l'extérieur, les alentours : pas de mauvaise surprise en arrivant.</p></div>
+      <div class="carte" data-vu style="--d:.06s"><img class="ico" src="img/croquis/feuille.png" alt="" loading="lazy"><h3>Les vraies informations</h3><p>Taille des pièces, état du bâti, travaux à prévoir, prix. Ce qu'on sait, on le dit.</p></div>
+      <div class="carte" data-vu style="--d:.12s"><img class="ico" src="img/croquis/cube.png" alt="" loading="lazy"><h3>Bientôt en 3D</h3><p>Vous pourrez vous promener dans le bien depuis votre téléphone, pièce par pièce.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="biens">
+  <div class="wrap">
+    <div class="entete" data-vu><p class="sur">Les biens</p><h2>Les premiers biens arrivent.</h2><p class="chapo">On démarre tout juste. Laissez-nous ce que vous cherchez plus bas : vous serez prévenu dès qu'un bien correspond.</p></div>
+    <div class="filtres" role="group" aria-label="Filtrer par type de bien" data-vu>
+      <button data-type="tous" aria-pressed="true">Tous</button><button data-type="terrain" aria-pressed="false">Terrains</button><button data-type="grange" aria-pressed="false">Granges</button><button data-type="maison" aria-pressed="false">Maisons</button>
+    </div>
+    <div class="grille g3">
+  <article class="bien" data-type="terrain" data-vu style="--d:0s"><div class="vue"><img class="ico" src="img/croquis/terrain.png" alt="" loading="lazy"></div><div class="txt"><span class="etiquette">bientôt</span><h3>Terrains</h3><p>Constructibles, agricoles ou de loisir.</p></div></article>
+  <article class="bien" data-type="grange" data-vu style="--d:0.08s"><div class="vue"><img class="ico" src="img/croquis/grange.png" alt="" loading="lazy"></div><div class="txt"><span class="etiquette">bientôt</span><h3>Granges</h3><p>À transformer, à rénover ou à garder dans leur jus.</p></div></article>
+  <article class="bien" data-type="maison" data-vu style="--d:0.16s"><div class="vue"><img class="ico" src="img/croquis/maison.png" alt="" loading="lazy"></div><div class="txt"><span class="etiquette">bientôt</span><h3>Maisons</h3><p>De village, de montagne, avec ou sans travaux.</p></div></article>
+</div>
+  </div>
+</section>
+
+<section class="matiere bois">
+  <div class="fond" aria-hidden="true"><div class="bande"></div></div>
+  <div class="wrap">
+    <p class="sur" data-vu>Du coin</p>
+    <h2 data-vu style="--d:.06s">Des bâtisses avec une histoire, et de la place pour la vôtre.</h2>
+    <p data-vu style="--d:.12s">On connaît les villages, les vallées et les chemins. Posez-nous vos questions sur le secteur, on vous dira ce qu'on en sait.</p>
+  </div>
+</section>
+
+<section id="contact" class="papier">
+  <div class="wrap deux">
+    <div class="colle-haut" data-vu><p class="sur">Votre recherche</p><h2>Dites-nous ce que vous cherchez.</h2><p class="chapo">On vous écrit dès qu'un bien correspond, avant même qu'il soit publié partout.</p></div>
+    <div data-vu><form class="contact" data-sujet="Je cherche un bien" novalidate>
+  <label for="a-nom">Nom<input id="a-nom" name="Nom" type="text" autocomplete="name" required></label>
+  <label for="a-mail">E-mail<input id="a-mail" name="E-mail" type="email" autocomplete="email" required></label>
+  <label for="a-tel">Téléphone<input id="a-tel" name="Téléphone" type="tel" autocomplete="tel"></label>
+  <label for="a-type">Type de bien<select id="a-type" name="Type de bien"><option>Peu importe</option><option>Maison</option><option>Grange</option><option>Terrain</option></select></label>
+  <label for="a-budget">Budget<select id="a-budget" name="Budget"><option>Moins de 50 000 €</option><option>50 000 à 100 000 €</option><option>100 000 à 200 000 €</option><option>Plus de 200 000 €</option></select></label>
+  <label for="a-secteur">Secteur souhaité<input id="a-secteur" name="Secteur souhaité" type="text" ></label>
+  <label for="a-msg" class="tout">Votre projet<textarea id="a-msg" name="Votre projet" placeholder="Résidence principale, maison de vacances, rénovation, terrain pour construire…"></textarea></label>
+  <button class="btn tout" type="submit" style="justify-self:start">Me prévenir <span class="fl" aria-hidden="true">→</span></button>
+  <p class="retour" role="status" hidden></p>
+  <small>Vos coordonnées servent uniquement à vous répondre.</small>
+</form></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="haut">
+      <img src="img/logo-clair.png" alt="MaBâtis" width="1080" height="520">
+      <ul>
+        <li><a href="vendre.html">Je vends mon bien</a></li>
+        <li><a href="acheter.html">Je cherche un bien</a></li>
+        <li><a href="partenaires.html">Agences et agents immobiliers</a></li>
+      </ul>
+      <p class="sur">Ariège, Pyrénées</p>
+    </div>
+    <p class="legal">MaBâtis n'est pas une agence immobilière. Nous mettons en avant des biens et mettons en relation vendeurs, acheteurs et professionnels. Les mandats, les visites, la négociation et la vente sont réalisés par nos partenaires titulaires de la carte professionnelle. © <span id="annee"></span> MaBâtis.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
